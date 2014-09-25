@@ -2,7 +2,6 @@ package fei.criintent;
 
 import java.util.ArrayList;
 
-import com.bignerdranch.android.criminalintent.R;
 
 import android.annotation.TargetApi;
 import android.content.Intent;

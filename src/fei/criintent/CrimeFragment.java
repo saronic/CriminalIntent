@@ -3,7 +3,6 @@ package fei.criintent;
 import java.util.Date;
 import java.util.UUID;
 
-import com.bignerdranch.android.criminalintent.R;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
-import com.bignerdranch.android.criminalintent.R;
 
 import android.hardware.Camera;
 import android.hardware.Camera.Size;
@@ -63,14 +62,14 @@ public class CrimeCameraFragment extends Fragment {
 				
 			}
 			
-			public void surfaceChanged(SurfaceHolder holder, int forart, int w, int h) {
+			public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
 				if (mCamera == null) return;
 				Camera.Parameters parameters = mCamera.getParameters();
 				Size s = getBestSupportedSize(parameters.getSupportedPreviewSizes(), w, h);
 				parameters.setPreviewSize(s.width, s.height);
 				mCamera.setParameters(parameters);
 				try {
-					
+					mCamera.startPreview();
 				} catch (Exception e) {
 					Log.e(TAG, "Could not start preview", e);
 					mCamera.release();

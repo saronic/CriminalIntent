@@ -1,6 +1,5 @@
 package fei.criintent;
 
-import com.bignerdranch.android.criminalintent.R;
 
 import android.os.Bundle;
 
