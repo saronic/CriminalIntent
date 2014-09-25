@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Camera;
 import android.hardware.Camera.ShutterCallback;
 import android.hardware.Camera.Size;
@@ -24,6 +26,7 @@ import android.widget.Button;
 
 public class CrimeCameraFragment extends Fragment {
 	protected static final String TAG = "CrimeCameraFragment";
+	public static final String EXTRA_PHOTO_FILENAME = "fei.criintent.photo_filename";
 	private Camera mCamera;
 	private SurfaceView mSurfaceView;
 	private View mProgressContainer;
@@ -56,7 +59,11 @@ public class CrimeCameraFragment extends Fragment {
 			}
 			
 			if (success) {
-				Log.i(TAG, "JPEG saved at " + fileName);
+				Intent i = new Intent();
+				i.putExtra(EXTRA_PHOTO_FILENAME, fileName);
+				getActivity().setResult(Activity.RESULT_OK, i);
+			} else {
+				getActivity().setResult(Activity.RESULT_CANCELED);
 			}
 			getActivity().finish();
 		}
