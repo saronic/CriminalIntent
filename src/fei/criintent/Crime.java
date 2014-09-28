@@ -73,7 +73,7 @@ public class Crime {
 		json.put(JSON_DATE, mDate.getTime());
 		json.put(JSON_SOLVED, mSolved);
 		if (mPhoto != null) {
-			json.put(JSON_PHOTO, mPhoto.toJson());
+			json.put(JSON_PHOTO, mPhoto.toJSON());
 		}
 		return json;
 	}
