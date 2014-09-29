@@ -14,5 +14,14 @@
   <string name="subtitle">Sometimes tolerance is not a virtue.</string>
   <string name="delete_crime">delete the crime</string>
   <string name="take">TakePic</string>
+  <string name="crime_suspect_text">choose suspect</string>
+  <string name="crime_report_text">report suspect</string>
+  <string name="crime_report">%1$s! the crime was discovered on %2$s. %3$s, and %4$s</string>
+  <string name="crime_report_resolved">the case is resolved</string>
+  <string name="crime_report_unsolved">the case is not resolved</string>
+  <string name="crime_report_no_suspect">There is no suspect</string>
+  <string name="crime_report_suspect">the suspect is %s.</string>
+  <string name="crime_report_subject">CriminalIntent crime Report</string>
+  <string name="send_report">Send crime report via</string>
 
 </resources>
