@@ -36,6 +36,7 @@ public class PictureUtils {
 	}
 	
 	public static void cleanImageView(ImageView imageView) {
+		if (!(imageView.getDrawable() instanceof BitmapDrawable)) return;
 		BitmapDrawable b = (BitmapDrawable) imageView.getDrawable();
 		b.getBitmap().recycle();
 		imageView.setImageDrawable(null);
