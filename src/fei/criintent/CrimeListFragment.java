@@ -2,8 +2,8 @@ package fei.criintent;
 
 import java.util.ArrayList;
 
-
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,6 +25,7 @@ import android.widget.TextView;
 public class CrimeListFragment extends ListFragment {
 	private ArrayList<Crime> mCrimes;
 	private boolean mSubtitleVisible;
+	private Callbacks mCallback;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -107,6 +108,18 @@ public class CrimeListFragment extends ListFragment {
 		}
 	}
 
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		mCallback = (Callbacks) activity;
+	}
+
+	@Override
+	public void onDetach() {
+		super.onDetach();
+		mCallback = null;
+	}
+
 	private class CrimeAdapter extends ArrayAdapter<Crime> {
 		public CrimeAdapter(ArrayList<Crime> crimes) {
 			super(getActivity(), android.R.layout.simple_list_item_1, crimes);
@@ -159,5 +172,9 @@ public class CrimeListFragment extends ListFragment {
 			return true;
 		}
 		return super.onContextItemSelected(item);
+	}
+
+	public interface Callbacks {
+		void onCrimeSelected(Crime crime);
 	}
 }
